@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'LearnStuff_Example' do
+  pod 'LearnStuff', :path => '../'
+
+  target 'LearnStuff_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end
