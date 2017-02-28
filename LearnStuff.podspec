@@ -31,7 +31,12 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'LearnStuff/Classes/**/*'
-  
+  s.public_header_files = 'LearnStuff/**/*.h'
+  s.preserve_paths = 'LearnStuff/Classes/libSelligentMobile1.5.a'
+  s.ios.vendored_library = 'LearnStuff/Classes/libSelligentMobile1.5.a'
+  s.libraries = 'SelligentMobile1.5'
+  s.requires_arc = true
+
   # s.resource_bundles = {
   #   'LearnStuff' => ['LearnStuff/Assets/*.png']
   # }
