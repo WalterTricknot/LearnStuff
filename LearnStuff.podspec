@@ -7,6 +7,7 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'Commercial', :file => 'LICENSE' }
   s.author           = { 'WalterTricknot' => 'Walter.Tricknot@selligent.com' }
   s.source           = { :git => 'https://github.com/WalterTricknot/LearnStuff.git', :tag => s.version.to_s }
+  s.platform = :ios
   s.ios.deployment_target = '8.0'
   s.requires_arc = true
   s.preserve_paths = 'LearnStuff/**/*.*'
