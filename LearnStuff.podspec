@@ -20,11 +20,13 @@ Pod::Spec.new do |s|
     sdkCore.source_files = 'LearnStuff/Headers/*.h'
     sdkCore.vendored_library = 'LearnStuff/Library/libSelligentMobile1.5.a'
     sdkCore.weak_framework = 'UserNotifications'
+    sdkCore.xcconfig = { "LIBRARY_SEARCH_PATHS" => "\"$(PODS_ROOT)/LearnStuff/Library\"" }
   end
 
   s.subspec 'SDK' do |sdk|
     sdk.source_files = 'LearnStuff/Headers/*.h'
     sdk.vendored_library = 'LearnStuff/Library/libSelligentMobile1.5.a'
     sdk.weak_framework = 'UserNotifications'
+    sdk.xcconfig = { "LIBRARY_SEARCH_PATHS" => "\"$(PODS_ROOT)/LearnStuff/Library\"" }
   end
 end
