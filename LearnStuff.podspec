@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
 
   s.default_subspec = 'SDK'
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
+  s.weak_framework = 'UserNotifications'
 
   s.subspec 'SDK' do |sdk|
     sdk.source_files = 'LearnStuff/Headers/*.h'
