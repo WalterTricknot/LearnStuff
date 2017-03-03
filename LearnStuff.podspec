@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
 
-  s.source_files = 'LearnStuff/**/*.h'
+  s.source_files = '**/*.h'
   s.vendored_library = 'LearnStuff/Classes/libSelligentMobile1.5.a'
   s.weak_framework = 'UserNotifications'
 
