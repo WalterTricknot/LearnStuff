@@ -18,7 +18,6 @@ Pod::Spec.new do |s|
 
   s.subspec 'SDK' do |sdk|
     sdk.source_files = 'LearnStuff/**/*.h'
-    sdk.preserve_paths = 'LearnStuff/Classes/libSelligentMobile1.5.a'
     sdk.vendored_library = 'LearnStuff/Classes/libSelligentMobile1.5.a'
     sdk.libraries = 'SelligentMobile1.5'
     sdk.weak_framework = 'UserNotifications'
