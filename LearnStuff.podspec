@@ -1,32 +1,13 @@
-#
-# Be sure to run `pod lib lint LearnStuff.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'LearnStuff'
   s.version          = '0.1.0'
   s.summary          = 'LearnStuff.'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-LearnStuff long description
-                       DESC
-
-  s.homepage         = 'https://github.com/WalterTricknot/LearnStuff'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.description      = 'LearnStuff long description'
+  s.homepage         = 'http://www.selligent.com'
+  s.license          = { :type => '', :file => 'LICENSE' }
   s.author           = { 'WalterTricknot' => 'Walter.Tricknot@selligent.com' }
   s.source           = { :git => 'https://github.com/WalterTricknot/LearnStuff.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
@@ -37,12 +18,23 @@ LearnStuff long description
   s.libraries = 'SelligentMobile1.5'
   s.requires_arc = true
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
+  s.default_subspec = 'SDK'
 
-  # s.resource_bundles = {
-  #   'LearnStuff' => ['LearnStuff/Assets/*.png']
-  # }
+  s.subspec 'Core' do |sdkCore|
+    sdkCore.ios.library = 'z'
+    sdkCore.frameworks = 'SystemConfiguration'
+    sdkCore.source_files = 'LearnStuff/Headers/*.h'
+    sdkCore.preserve_paths = 'LearnStuff/Library/libSelligentMobile1.5.a'
+    sdkCore.vendored_library = 'LearnStuff/Library/libSelligentMobile1.5.a'
+    sdkCore.weak_framework = 'UserNotifications'
+  end
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.subspec 'SDK' do |sdk|
+    sdk.source_files = 'LearnStuff/Headers/*.h'
+    sdk.preserve_paths = 'LearnStuff/Library/libSelligentMobile1.5.a'
+    sdk.vendored_library = 'LearnStuff/Library/libSelligentMobile1.5.a'
+    sdk.libraries = 'SelligentMobile1.5'
+    sdk.weak_framework = 'UserNotifications'
+  end
+
 end
