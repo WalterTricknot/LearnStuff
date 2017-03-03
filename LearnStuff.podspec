@@ -16,7 +16,6 @@ Pod::Spec.new do |s|
   s.preserve_paths = 'LearnStuff/**/*.*'
 
   s.ios.library = 'z'
-  s.source_files = 'LearnStuff/**/*.h'
   s.vendored_library = 'LearnStuff/Classes/libSelligentMobile1.5.a'
   s.weak_framework = 'UserNotifications'
 
