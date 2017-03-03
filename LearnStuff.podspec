@@ -12,12 +12,21 @@ Pod::Spec.new do |s|
 
   s.default_subspec = 'SDK'
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
-  s.weak_framework = 'UserNotifications'
+
+   s.subspec 'Core' do |sdkCore|
+    sdkCore.ios.library = 'z'
+    sdkCore.frameworks = 'SystemConfiguration'
+    sdkCore.source_files = 'LearnStuff/Headers/*.h'
+    sdkCore.preserve_paths = 'LearnStuff/Library/libSelligentMobile1.5.a'
+    sdkCore.vendored_library = 'LearnStuff/Library/libSelligentMobile1.5.a'
+    sdkCore.weak_framework = 'UserNotifications'
+  end
 
   s.subspec 'SDK' do |sdk|
     sdk.source_files = 'LearnStuff/Headers/*.h'
     sdk.preserve_paths = 'LearnStuff/Library/libSelligentMobile1.5.a'
     sdk.vendored_library = 'LearnStuff/Library/libSelligentMobile1.5.a'
     sdk.libraries = 'SelligentMobile1.5'
+    sdk.weak_framework = 'UserNotifications'
   end
 end
