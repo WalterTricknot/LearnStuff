@@ -9,24 +9,12 @@ Pod::Spec.new do |s|
   s.author           = { 'WalterTricknot' => 'Walter.Tricknot@selligent.com' }
   s.source           = { :git => 'https://github.com/WalterTricknot/LearnStuff.git', :tag => s.version.to_s }
 
+  s.platform = :ios
   s.ios.deployment_target = '8.0'
-
-  s.source_files = 'LearnStuff/Classes/**/*'
-  s.public_header_files = 'LearnStuff/**/*.h'
-  s.preserve_paths = 'LearnStuff/Classes/libSelligentMobile1.5.a'
-  s.ios.vendored_library = 'LearnStuff/Classes/libSelligentMobile1.5.a'
-  s.libraries = 'SelligentMobile1.5'
   s.requires_arc = true
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
 
-  s.subspec 'Core' do |sdkCore|
-    sdkCore.ios.library = 'z'
-    sdkCore.frameworks = 'SystemConfiguration'
-    sdkCore.source_files = 'LearnStuff/Classes/include/*.h'
-    sdkCore.preserve_paths = 'LearnStuff/Classes/libSelligentMobile1.5.a'
-    sdkCore.vendored_library = 'LearnStuff/Classes/libSelligentMobile1.5.a'
-    sdkCore.weak_framework = 'UserNotifications'
-  end
+  s.default_subspec = 'SDK'
 
   s.subspec 'SDK' do |sdk|
     sdk.source_files = 'LearnStuff/Classes/include/*.h'
