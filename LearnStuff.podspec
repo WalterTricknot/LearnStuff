@@ -9,12 +9,10 @@ Pod::Spec.new do |s|
   s.author           = { 'WalterTricknot' => 'Walter.Tricknot@selligent.com' }
   s.source           = { :git => 'https://github.com/WalterTricknot/LearnStuff.git', :tag => s.version.to_s }
 
-  s.platform = :ios
   s.ios.deployment_target = '8.0'
   s.requires_arc = true
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
 
-  s.ios.library = 'z'
   s.source_files = 'LearnStuff/**/*.h'
   s.vendored_library = 'LearnStuff/Classes/libSelligentMobile1.5.a'
   s.weak_framework = 'UserNotifications'
