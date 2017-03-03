@@ -13,13 +13,14 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.requires_arc = true
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
+  s.preserve_paths = 'LearnStuff/**/*.*'
 
   s.default_subspec = 'SDK'
 
   s.subspec 'SDK' do |sdk|
+    sdk.ios.library = 'z'
     sdk.source_files = 'LearnStuff/**/*.h'
     sdk.vendored_library = 'LearnStuff/Classes/libSelligentMobile1.5.a'
-    sdk.libraries = 'SelligentMobile1.5'
     sdk.weak_framework = 'UserNotifications'
   end
 
