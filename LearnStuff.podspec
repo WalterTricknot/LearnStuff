@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.default_subspec = 'SDK'
+  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
 
   s.subspec 'SDK' do |sdk|
     sdk.source_files = 'LearnStuff/Headers/*.h'
