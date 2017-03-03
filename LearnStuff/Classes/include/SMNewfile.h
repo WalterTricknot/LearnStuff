@@ -11,3 +11,8 @@
 
 
 #endif /* SMNewfile_h */
+
+@interface SMNewfile : SMMessage
+
+
+@end
