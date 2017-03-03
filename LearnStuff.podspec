@@ -36,6 +36,7 @@ LearnStuff long description
   s.ios.vendored_library = 'LearnStuff/Classes/libSelligentMobile1.5.a'
   s.libraries = 'SelligentMobile1.5'
   s.requires_arc = true
+  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
 
   # s.resource_bundles = {
   #   'LearnStuff' => ['LearnStuff/Assets/*.png']
