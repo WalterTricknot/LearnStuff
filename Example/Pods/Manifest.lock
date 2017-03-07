@@ -1,0 +1,23 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - LearnStuff (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - LearnStuff (from `../`)
+
+EXTERNAL SOURCES:
+  LearnStuff:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  LearnStuff: a6b74e8dcb8a0d94f517fa3bf376fcfa110643fc
+
+PODFILE CHECKSUM: abe02be5edfb1e444bd98bd850c8d17d1a6977c4
+
+COCOAPODS: 1.2.0
