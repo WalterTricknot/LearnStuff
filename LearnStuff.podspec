@@ -8,11 +8,11 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'Commercial', :file => 'LICENSE' }
   s.author           = { 'WalterTricknot' => 'Walter.Tricknot@selligent.com' }
   s.source           = { :git => 'https://github.com/WalterTricknot/LearnStuff.git', :tag => s.version.to_s }
-
-  s.ios.deployment_target = '8.0'
+  s.platform = :ios
   s.requires_arc = true
+  s.ios.deployment_target = '8.0'
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
-  s.preserve_paths = 'LearnStuff/**/*.*'
+  s.preserve_paths = '**/*.*'
   s.default_subspec = 'SDK'
 
   s.subspec 'SDK' do |sdk|
