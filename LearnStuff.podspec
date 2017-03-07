@@ -13,14 +13,11 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
   s.preserve_paths = '**/*.*'
-  s.default_subspec = 'SDK'
+  s.ios.library = 'z'
+  s.source_files = 'LearnStuff/**/*.m', 'LearnStuff/**/*.h'
+  s.public_header_files = 'LearnStuff/**/*.h'
+  s.vendored_library = 'LearnStuff/Classes/libSelligentMobile1.5.a'
+  s.weak_framework = 'UserNotifications'
 
-  s.subspec 'SDK' do |sdk|
-    sdk.ios.library = 'z'
-    sdk.source_files = 'LearnStuff/**/*.m', 'LearnStuff/**/*.h'
-    sdk.public_header_files = 'LearnStuff/**/*.h'
-    sdk.vendored_library = 'LearnStuff/Classes/libSelligentMobile1.5.a'
-    sdk.weak_framework = 'UserNotifications'
-end
 
 end
