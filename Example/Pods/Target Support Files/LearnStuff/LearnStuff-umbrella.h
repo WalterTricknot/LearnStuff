@@ -10,6 +10,9 @@
 #endif
 #endif
 
+#import "SMHelper.h"
+#import "SMBaseMessage.h"
+
 
 FOUNDATION_EXPORT double LearnStuffVersionNumber;
 FOUNDATION_EXPORT const unsigned char LearnStuffVersionString[];
